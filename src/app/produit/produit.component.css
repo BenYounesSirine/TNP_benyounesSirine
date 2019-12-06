@@ -1,0 +1,12 @@
+.body{background-image: url('src/assets/back1.jpg') no-repeat ;}
+ table{margin-top: 20%;}
+td{color: white;}
+th{color: tan;}
+.card{
+    margin-top: 70%;
+    margin-left: 100px;
+    width: 351px;
+    color: white;
+    background-image: url('src/assets/acc4.jpg');
+   }
+   .card-header{background-image:url('src/assets/tap.jpg') ;}
