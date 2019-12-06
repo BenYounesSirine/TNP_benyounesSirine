@@ -16,7 +16,14 @@ text-align: center;}
 }
 h5{color: rgb(19, 243, 86);
 margin-left: 10%;}
- 
+ h6{font-size: x-large;}
+
+.neon{
+color: rgb(170, 23, 23);
+
+text-shadow: 0 0 10px rgb(206, 16, 16), 0 0 40px rgb(206, 16, 16), 0 0 80px rgb(206, 16, 16);
+
+}
 
 img{height: 500PX;}
 
