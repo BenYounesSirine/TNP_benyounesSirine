@@ -1,0 +1,24 @@
+<div class="body">
+<h1>Notre collections</h1>
+<hr>
+<div class="cont">
+    <div class="search_box">
+        <!--fontawesome code:&#8981;-->
+        &#8981;Chercher par <input type="text" [(ngModel)]="ref" (input)="search()" placeholder="nom"/><br>
+        &#8981;Chercher par <input type="text" [(ngModel)]="prixU" (input)="searchp()" placeholder="prix"/>
+
+</div></div>
+
+<hr>
+<ng-container *ngFor="let produit of Produits">
+    <div [ngSwitch]="produit.ref">
+        <h5>{{produit.ref}}</h5><br>
+        <img src="{{produit.img}}"> <br>
+        <p>{{produit.prixU}} DTN<button class="add" type="submit" (click)="fct()">ADD</button></p>
+</div>           
+</ng-container>
+<button routerLink="/dashboard" routerLinkActive="active" class="neon">retour</button>
+</div>
+
+
+

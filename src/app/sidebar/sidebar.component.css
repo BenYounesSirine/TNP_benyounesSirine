@@ -1,0 +1,13 @@
+.siderbar{
+    background: black;
+}
+.nav-link{
+    margin-top: 30px;
+    font-family: Georgia, serif;
+    color: #b8a58a;
+}
+
+.nav .nav-item a:hover{background-image: url('src/assets/tap.jpg');
+}
+
+

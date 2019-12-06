@@ -1,0 +1,94 @@
+nav{
+  margin-left: 4%;
+  background:black;
+  /*position: fixed;*/
+  margin-top: 2%;
+}
+
+
+
+.nav-link{
+    color: #b8a58a;
+    font-family: Georgia, serif;
+}
+.fa{ margin-left: 5%;
+  color: #b8a58a;
+}
+img{height: 40px; width: 40px; margin-left: 2%;}
+
+.navf{
+  margin-left: 232px;
+}
+input{
+  width: 100px;
+  background:black;
+  color:#b8a58a;
+  border:1px solid black;
+  border-bottom-color:#b8a58a;
+  margin-right: 3px;
+}
+.fp{margin-left: 210px;
+  color: #66543a;}
+button{
+  position: absolute;
+  transform: translateY(-50%,-50%);
+}
+button{
+  background: none;
+  color: #ccc;
+  width: 170px;
+  
+  border: 1px solid #b8a58a;
+  font-size: 10px;
+  border-radius: 4px;
+  transition:.6s;
+  overflow: hidden;
+
+}
+button:focus{
+  outline: none;
+}
+button:before{
+  content: '';
+  display: block;
+  position: absolute;
+  background:rgba(255, 255, 255, 5);
+  width: 60px;
+  height: 100px;
+  left: 0;
+  top: 0;
+  opacity: .5s;
+  filter: blur(30px);
+  transform: translateX(-130px) skew(-15deg);
+}
+button:after{
+  content: '';
+  display: block;
+  position: absolute;
+  background: rgba(255, 255, 255, 2);
+  width: 30px;
+  height: 100%;
+  left: 30px;
+  top: 0;
+  opacity: 0;
+  filter: blur(30px);
+  transform: translate(-100px) scaleX(-15deg);
+}
+button:hover{
+  background:#66543a;
+  cursor: pointer;
+}
+button:hover:before{
+  transform: translateX(300px) skewX(-15deg);
+  opacity: .6;
+  transition: 2s;
+}
+button:hover:after{
+  transform: translateX(300px) skewX(-15deg);
+  opacity: 1;
+  transition: 2s;
+}
+
+
+
+

@@ -1,0 +1,75 @@
+<div class="body">
+<!--titre-->
+    <div class="carousel-inner">
+        <img class="titreimg" src="../assets/titre.PNG">
+      </div>
+
+<!--about-->
+<section id="about">
+  <h3>CHOCO!</h3>
+  <P>Confectionné à partir de matières premières de très bonne qualité, à partir de recettes élaborées par de véritables artisans-chocolatiers, le chocolat haut de gamme est un vrai témoignage d'amour à la gourmandise. Chez nous, la fabrication de ce chocolat de luxe a été perfectionnée pendant les nombreuses décennies d'ancienneté de la chocolaterie. Le résultat ? Un chocolat haut de gamme, à la fois fin et aux arômes complexes.</P>
+</section>
+
+<!--crousel news-->
+<section id="news">
+<h3>NEWS</h3>
+<h6 class="neon">Offre exlusive de {{ddebut|date:'dd/MM/yyyy'}} jusqu'a {{dfin|date:'dd/MM/yyyy'}}</h6><br>
+<div class="slider-area">
+<div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel">
+    <ol class="carousel-indicators">
+      <li data-target="#carouselExampleIndicators" data-slide-to="0" class="active"></li>
+      <li data-target="#carouselExampleIndicators" data-slide-to="1"></li>
+      <li data-target="#carouselExampleIndicators" data-slide-to="2"></li>
+    </ol>
+    <div class="carousel-inner">
+      <div class="carousel-item active">
+        <img class="d-block w-100" src="../assets/chris1.jpg" alt="First slide">
+        <div class="carousel-caption d-none d-md-block">
+            <h5>Chocolats fins et raffinés</h5>
+            <p>Dégustez des assortiments de chocolats fins et raffinés, préparés avec passion et savoir-faire par les chocolatiers.Vivez un pur instant de dégustation privilégiée </p>
+          </div>
+    </div>
+      <div class="carousel-item">
+        <img class="d-block w-100" src="../assets/chris0.jpg" alt="Second slide">
+        <div class="carousel-caption d-none d-md-block">
+            <h5>Offrir des chocolats de luxe pour toutes les occasions
+            </h5>
+            <p>Pour un anniversaire, un Noël passé en famille ou bien un moment passé en amoureux, rien ne battra jamais une jolie boite de chocolats</p>
+          </div>  
+    </div>
+      <div class="carousel-item">
+        <img class="d-block w-100" src="../assets/chris2.jpg" alt="Third slide">
+        <div class="carousel-caption d-none d-md-block">
+            <h5>chaque dégustation est une incitation à voyager !</h5>
+            <p>goûts classiques et traditionnels enrobés d'une fine couche de chocolat, de ganache fondante, de pâte d'amande ou de praliné craquant. Chocolat noir ou au lait</p>
+          </div>  
+    </div>
+    </div>
+    <a class="carousel-control-prev" href="#carouselExampleIndicators" role="button" data-slide="prev">
+      <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+      <span class="sr-only">Previous</span>
+    </a>
+    <a class="carousel-control-next" href="#carouselExampleIndicators" role="button" data-slide="next">
+      <span class="carousel-control-next-icon" aria-hidden="true"></span>
+      <span class="sr-only">Next</span>
+    </a>
+  </div>
+  </div>
+  </section>
+  <!--NOS produit-->
+  <section id="prod">
+  <div class="W3-col l12 s12 produit">
+    <div class="w3-container w3-white w3-margin w3-padding-large">
+      <h3>Collections</h3>
+      <div class="container">
+        <div id="carousel">
+          <ng-container *ngFor="let produit of Produits">           
+          <figure class="box" ><a routerLink="/dashboard/detail" routerLinkActive="active" ><img class="img" src={{produit.img}}>
+            <div class="details"><div class="content"><h5>{{produit.ref}}</h5><p>Details</p></div></div></a></figure>
+          </ng-container>
+        </div>
+      </div>
+    </div>
+  </div></section>
+
+</div>

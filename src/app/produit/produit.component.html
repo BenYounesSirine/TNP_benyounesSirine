@@ -1,0 +1,66 @@
+<div class="body">
+    <div class="container ">
+<div class="row">
+<!--tab-->
+    <div class="col-lg-7">
+<table class="table table-hover">
+    <thead>
+        <tr> <th>NOS PRODUITS</th></tr>
+        <tr>
+        <th>Réference</th><th>Quantité</th><th>Prix Unitaires</th><th>En Stock</th>
+         <th><button class="btn btn-outline-primary" (click)="operation='add';initProduit(); ">ADD</button></th>
+    </tr></thead>
+    <tbody>
+        <tr *ngFor="let produit of Produits"> 
+          <td>{{produit.ref}}</td><td>{{produit.qte}}</td><td>{{produit.prixU}}</td><td>{{produit.enStock|checkmarck}}</td>
+        <td>
+            <button class="btn btn-outline-primary" (click)="operation='edit'; selectedP=produit;">Edit</button>
+            <button class="btn btn-outline-danger" (click)="operation='remove'; selectedP=produit;">Remove</button>
+        </td>
+        </tr>
+    </tbody>
+</table>
+    </div>
+
+<!--formulaire-->
+<div class="col-lg-5">
+<div class="card">
+    <!--titre form selon click du btn-->
+    <div class="card-header ">
+        {{operation == 'add'? 'Ajouter Produit' :
+         operation == 'edit'? 'Modifier Produit' :
+        operation == 'remove'? 'Supprimer Produit' : '' }}
+    </div>
+     <div class="card-body">
+<div *ngIf="operation == 'add' || operation == 'edit'">
+      <form [formGroup]="produitForm" >
+             <div class="form-group">
+               <label>Référence:</label><input type="text" class="form-control" formControlName="ref" [(ngModel)]="selectedP.ref"/>
+             </div>
+<!--controler reference-->
+<div class="alert alert-danger" *ngIf="produitForm.controls['ref'].touched || produitForm.controls['ref'].dirty">Réference est obligatoire!</div>
+            <div class="form-group">
+                <label>Quantité:</label><input type="number" class="form-control" formControlName="qte" [(ngModel)]="selectedP.qte"/>
+            </div>
+        
+            <div class="form-group">
+                <label>Prix Unitaire:</label><input type="number" class="form-control" formControlName="prixU"  [(ngModel)]="selectedP.prixU"/>
+            </div>
+<!--btn desactive si ref est vide(nzidou qts )-->
+            <button class="btn btn-success" [disabled]="produitForm.invalid" 
+            (click)="operation=='add'?ajouter():updatep() ">
+     {{operation == 'add' ? 'Ajouter' : operation == 'edit'?'Modifier': ''}}       
+        </button>
+         </form>
+     </div>
+<!--remove!!-->
+<div *ngIf="operation == 'remove'">
+    <p class="card-title">Réference : {{selectedP.ref}}</p>
+    <p> Voulez-vous Supprimer ce produit?</p>
+    <button class="btn btn-danger" [disabled]="!selectedP.ref" (click)="delete()">Confirmer</button>
+</div>
+     <div class="card-footer"></div>
+</div>
+</div>
+</div>
+</div></div>
